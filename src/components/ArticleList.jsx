@@ -15,6 +15,8 @@ function ArticleList() {
 
   if (isLoading) return <h1>Loading...</h1>;
 
+  if (isLoading) return <h1>Loading...</h1>;
+
   return articles.map((article, index) => {
     const date = new Date(Date.parse(article.created_at));
 
@@ -33,5 +35,4 @@ function ArticleList() {
       );
   });
 }
-
 export default ArticleList;
