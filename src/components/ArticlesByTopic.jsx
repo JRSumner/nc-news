@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchTopics } from "./utils/api";
+import { fetchByTopics } from "./utils/api";
 
 function ArticlesByTopic() {
   const [articles, setArticles] = useState([]);
@@ -8,7 +8,7 @@ function ArticlesByTopic() {
   const { topic } = useParams();
 
   useEffect(() => {
-    fetchTopics(topic).then((articles) => {
+    fetchByTopics(topic).then((articles) => {
       setArticles(articles);
       setIsLoading(false);
     });
