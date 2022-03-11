@@ -17,9 +17,10 @@ function AddComment({ setTopComments, article_id }) {
     };
 
     postComment(newComment, article_id)
-      .then((res) => {
+      .then(({ data }) => {
+        console.log(data.comment, "<<<<s");
         setTopComments((currentReviews) => {
-          return [newComment, ...currentReviews];
+          return [data.comment, ...currentReviews];
         });
       })
       .catch((err) => {

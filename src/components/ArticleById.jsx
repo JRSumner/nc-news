@@ -87,17 +87,16 @@ function ArticleById() {
   return (
     <section>
       <h2>{article.title}</h2>
-      <h4 className="article-written-by">Written by: {article.author}</h4>
-      <h4 className="article-posted-by">
+      <p className="article-written-by">Written by: {article.author}</p>
+      <p className="article-posted-by">
         Posted:{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}
-      </h4>
+      </p>
       <section className="article-body">
         <p>{article.body}</p>
       </section>
 
       <div className="article-comments-votes-section">
         <div className="voter">
-          <h4 className="article-vote-count">Votes: {votes}</h4>
           <button
             disabled={upVoted}
             className="up-vote"
@@ -114,10 +113,13 @@ function ArticleById() {
           </button>
           {isError ? <h4>{isError}</h4> : null}
         </div>
-        <h4 className="article-comment-count">
-          Comments: {article.comment_count}
-        </h4>
       </div>
+
+      <section>
+        <p className="article-comment-and-vote-count">
+          Votes: {votes} Comments: {article.comment_count}
+        </p>
+      </section>
 
       <section className="comment-box">
         <AddComment
