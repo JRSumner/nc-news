@@ -122,11 +122,7 @@ function ArticleById() {
       </section>
 
       <section className="comment-box">
-        <AddComment
-          key={99999}
-          setTopComments={setTopComments}
-          article_id={article_id}
-        />
+        <AddComment setTopComments={setTopComments} article_id={article_id} />
       </section>
 
       <Comments topComments={topComments} />
