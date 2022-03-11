@@ -1,5 +1,5 @@
 import axios from "axios";
-//slice here
+
 export const fetchArticles = () => {
   return axios
     .get("https://nc-news-example-seminar-3-18.herokuapp.com/api/articles")
@@ -10,7 +10,6 @@ export const fetchArticles = () => {
 };
 
 export const fetchArticle = (article_id) => {
-  console.log(article_id);
   return axios
     .get(
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}`
@@ -19,9 +18,8 @@ export const fetchArticle = (article_id) => {
       return article;
     });
 };
-//rename me
-//slice here
-export const fetchTopics = (topic) => {
+
+export const fetchByTopics = (topic) => {
   return axios
     .get(
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles?topic=${topic}`
@@ -32,4 +30,19 @@ export const fetchTopics = (topic) => {
     });
 };
 
-fetchArticle();
+export const patchVote = (article_id, vote) => {
+  return axios.patch(
+    `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}`,
+    { inc_votes: vote }
+  );
+};
+
+export const fetchTopThreeComments = (article_id) => {
+  return axios
+    .get(
+      `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}/comments`
+    )
+    .then(({ data: { comments } }) => {
+      return comments.slice(0, 3);
+    });
+};
