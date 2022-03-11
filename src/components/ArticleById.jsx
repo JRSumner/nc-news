@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import AddComment from "./AddComment";
 import Comments from "./ArticleComments";
 import { fetchTopThreeComments, patchVote } from "./utils/api";
 import { fetchArticle } from "./utils/api";
@@ -23,7 +24,7 @@ function ArticleById() {
       });
       patchVote(article.article_id, 2).catch((err) => {
         setVotes((previousVote) => {
-          setIsError("Connection Lost...");
+          setIsError("Oops, something went wrong 🥺");
           return previousVote - 2;
         });
       });
@@ -117,6 +118,14 @@ function ArticleById() {
           Comments: {article.comment_count}
         </h4>
       </div>
+
+      <section className="comment-box">
+        <AddComment
+          key={99999}
+          setTopComments={setTopComments}
+          article_id={article_id}
+        />
+      </section>
 
       <Comments topComments={topComments} />
     </section>

@@ -46,3 +46,16 @@ export const fetchTopThreeComments = (article_id) => {
       return comments.slice(0, 3);
     });
 };
+
+export const postComment = (comment, article_id) => {
+  console.log(article_id, "id");
+  console.log(comment, "comment");
+  return axios
+    .post(
+      `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}/comments`,
+      comment
+    )
+    .then((res) => {
+      console.log(res);
+    });
+};
