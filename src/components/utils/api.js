@@ -30,7 +30,7 @@ export const fetchByTopics = (topic) => {
     });
 };
 
-export const patchVote = (article_id, vote) => {
+export const patchArticleVote = (article_id, vote) => {
   return axios.patch(
     `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}`,
     { inc_votes: vote }

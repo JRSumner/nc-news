@@ -4,71 +4,16 @@ import AddComment from "./AddComment";
 import Comments from "./ArticleComments";
 import { fetchTopThreeComments, patchVote } from "./utils/api";
 import { fetchArticle } from "./utils/api";
+import Voter from "./utils/Voter";
 
 function ArticleById() {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [votes, setVotes] = useState(0);
-  const [upVoted, setUpVoted] = useState(false);
-  const [downVoted, setDownVoted] = useState(false);
   const [topComments, setTopComments] = useState([]);
   const [isError, setIsError] = useState(null);
   const { article_id } = useParams();
   const date = new Date(Date.parse(article.created_at));
-
-  const handleUpVote = () => {
-    setIsError(null);
-    if (downVoted) {
-      setVotes((currVotes) => {
-        return currVotes + 2;
-      });
-      patchVote(article.article_id, 2).catch((err) => {
-        setVotes((previousVote) => {
-          setIsError("Oops, something went wrong 🥺");
-          return previousVote - 2;
-        });
-      });
-    } else {
-      setVotes((currVotes) => {
-        return currVotes + 1;
-      });
-      patchVote(article.article_id, 1).catch((err) => {
-        setVotes((previousVote) => {
-          setIsError("Connection Lost...");
-          return previousVote - 1;
-        });
-      });
-    }
-    setUpVoted(true);
-    setDownVoted(false);
-  };
-
-  const handleDownVote = () => {
-    setIsError(null);
-    if (upVoted) {
-      setVotes((currVotes) => {
-        return currVotes - 2;
-      });
-      patchVote(article.article_id, -2).catch((err) => {
-        setVotes((previousVote) => {
-          setIsError("Connection Lost...");
-          return previousVote + 2;
-        });
-      });
-    } else {
-      setVotes((currVotes) => {
-        return currVotes - 1;
-      });
-      patchVote(article.article_id, -1).catch((err) => {
-        setVotes((previousVote) => {
-          setIsError("Connection Lost...");
-          return previousVote + 1;
-        });
-      });
-    }
-    setDownVoted(true);
-    setUpVoted(false);
-  };
 
   useEffect(() => {
     fetchArticle(article_id).then((article) => {
@@ -97,20 +42,7 @@ function ArticleById() {
 
       <div className="article-comments-votes-section">
         <div className="voter">
-          <button
-            disabled={upVoted}
-            className="up-vote"
-            onClick={() => handleUpVote()}
-          >
-            👍
-          </button>
-          <button
-            disabled={downVoted}
-            className="down-vote"
-            onClick={() => handleDownVote()}
-          >
-            👎
-          </button>
+          <Voter id={article.article_id} apiVotes={votes} />
           {isError ? <h4>{isError}</h4> : null}
         </div>
       </div>
