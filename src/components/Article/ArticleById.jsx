@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import AddComment from "../Utils/AddComment";
+import AddComment from "../utils/AddComment";
 import Comments from "../Comments/ArticleComments";
 import { fetchComments } from "../api/api";
 import { fetchArticle } from "../api/api";
-import Voter from "../Utils/Voter";
+import Voter from "../utils/Voter";
 
 function ArticleById() {
   const [article, setArticle] = useState([]);
