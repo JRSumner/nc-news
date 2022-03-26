@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import AddComment from "./utils/AddComment";
 import Comments from "./ArticleComments";
-import { fetchTopThreeComments, patchVote } from "./utils/api";
+import { fetchComments, patchVote } from "./utils/api";
 import { fetchArticle } from "./utils/api";
 import Voter from "./utils/Voter";
 
@@ -10,7 +10,7 @@ function ArticleById() {
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [votes, setVotes] = useState(0);
-  const [topComments, setTopComments] = useState([]);
+  const [comments, setComments] = useState([]);
   const [isError, setIsError] = useState(null);
   const { article_id } = useParams();
   const date = new Date(Date.parse(article.created_at));
@@ -22,8 +22,8 @@ function ArticleById() {
       setIsLoading(false);
     });
 
-    fetchTopThreeComments(article_id).then((topThreeComments) => {
-      setTopComments(topThreeComments);
+    fetchComments(article_id).then((Comments) => {
+      setComments(Comments);
     });
   }, []);
 
@@ -54,10 +54,10 @@ function ArticleById() {
       </section>
 
       <section className="comment-box">
-        <AddComment setTopComments={setTopComments} article_id={article_id} />
+        <AddComment setComments={setComments} article_id={article_id} />
       </section>
 
-      <Comments topComments={topComments} />
+      <Comments comments={comments} />
     </section>
   );
 }
