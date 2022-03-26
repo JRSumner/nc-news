@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import ArticlesByTopic from "./components/ArticlesByTopic";
-import ArticleById from "./components/ArticleById";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import ArticleList from "./components/ArticleList";
+import ArticlesByTopic from "./components/Article/ArticlesByTopic";
+import ArticleById from "./components/Article/ArticleById";
+import Header from "./components/Structure/Header";
+import Nav from "./components/Structure/Nav";
+import Footer from "./components/Structure/Footer";
+import ArticleList from "./components/Article/ArticleList";
 
 function App() {
   return (

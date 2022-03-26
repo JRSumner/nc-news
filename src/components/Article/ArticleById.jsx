@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import AddComment from "./utils/AddComment";
-import Comments from "./ArticleComments";
-import { fetchComments, patchVote } from "./utils/api";
-import { fetchArticle } from "./utils/api";
-import Voter from "./utils/Voter";
+import AddComment from "../Utils/AddComment";
+import Comments from "../Comments/ArticleComments";
+import { fetchComments } from "../api/api";
+import { fetchArticle } from "../api/api";
+import Voter from "../Utils/Voter";
 
 function ArticleById() {
   const [article, setArticle] = useState([]);
@@ -13,6 +13,7 @@ function ArticleById() {
   const [comments, setComments] = useState([]);
   const [isError, setIsError] = useState(null);
   const { article_id } = useParams();
+
   const date = new Date(Date.parse(article.created_at));
 
   useEffect(() => {

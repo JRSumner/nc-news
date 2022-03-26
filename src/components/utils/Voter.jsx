@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { patchArticleVote } from "./api";
+import { patchArticleVote } from "../api/api";
 
 export default function Voter({ id, apiVotes }) {
   const [voterVotes, setVoterVotes] = useState(0);
