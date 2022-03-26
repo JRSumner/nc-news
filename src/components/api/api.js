@@ -30,20 +30,20 @@ export const fetchByTopics = (topic) => {
     });
 };
 
-export const patchVote = (article_id, vote) => {
+export const patchArticleVote = (article_id, vote) => {
   return axios.patch(
     `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}`,
     { inc_votes: vote }
   );
 };
 
-export const fetchTopThreeComments = (article_id) => {
+export const fetchComments = (article_id) => {
   return axios
     .get(
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles/${article_id}/comments`
     )
     .then(({ data: { comments } }) => {
-      return comments.slice(0, 3);
+      return comments;
     });
 };
 

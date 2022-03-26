@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { postComment } from "./utils/api";
+import { postComment } from "../api/api";
 
-function AddComment({ setTopComments, article_id }) {
+function AddComment({ setComments, article_id }) {
   const [comment, setComment] = useState("");
   const [isError, setIsError] = useState(null);
 
@@ -18,7 +18,7 @@ function AddComment({ setTopComments, article_id }) {
 
     postComment(newComment, article_id)
       .then(({ data }) => {
-        setTopComments((currentReviews) => {
+        setComments((currentReviews) => {
           return [data.comment, ...currentReviews];
         });
       })

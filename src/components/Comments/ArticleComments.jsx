@@ -1,8 +1,8 @@
-function Comments({ topComments }) {
+function Comments({ comments }) {
   return (
     <section className="article-comments">
       <ul className="article-comments-list">
-        {topComments.map((comment) => {
+        {comments.map((comment) => {
           return (
             <li key={comment.comment_id}>
               {comment.author}: {comment.body}

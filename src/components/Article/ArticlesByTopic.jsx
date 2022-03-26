@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { fetchArticles } from "./utils/api";
+import { Link, useParams } from "react-router-dom";
+import { fetchByTopics } from "../api/api";
 
-function ArticleList() {
+function ArticlesByTopic() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { topic } = useParams();
 
   useEffect(() => {
-    fetchArticles().then((articles) => {
+    fetchByTopics(topic).then((articles) => {
       setArticles(articles);
       setIsLoading(false);
     });
-  }, []);
-
-  if (isLoading) return <h1>Loading...</h1>;
+  }, [topic]);
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -30,10 +29,10 @@ function ArticleList() {
             <dt>Author: {article.author}</dt>
             <dt>{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}</dt>
             <dt>Comments: {article.comment_count}</dt>
-            <dt>Votes: {article.votes}</dt>
           </dl>
         </section>
       );
   });
 }
-export default ArticleList;
+
+export default ArticlesByTopic;
