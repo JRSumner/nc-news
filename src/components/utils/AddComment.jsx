@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postComment } from "./utils/api";
+import { postComment } from "./api";
 
 function AddComment({ setTopComments, article_id }) {
   const [comment, setComment] = useState("");
