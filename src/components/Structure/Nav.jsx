@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import SortBy from "../utils/SortBy";
 
 function Nav() {
   return (
     <section>
-      <div>hello</div>
+      {/* <SortBy /> */}
       <ul className="nav-bar">
         <li className="nav-item">
           <Link to="/"> Home </Link>
