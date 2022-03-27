@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchArticles } from "../api/api";
+
 import SortBy from "../utils/SortBy";
 
 function ArticleList() {
@@ -16,10 +17,11 @@ function ArticleList() {
   }, [query]);
 
   if (isLoading) return <h1>Loading...</h1>;
-
+  console.log(query);
   return (
     <>
       <SortBy setQuery={setQuery} />
+
       {articles.map((article, index) => {
         const date = new Date(Date.parse(article.created_at));
 

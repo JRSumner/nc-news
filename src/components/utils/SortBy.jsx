@@ -1,29 +1,37 @@
-import { useState } from "react";
-import { fetchArticles } from "../api/api";
-import ArticleList from "../Article/ArticleList";
-
-function SortBy({ setQuery }) {
+function SortBy({ setQuery, topic, query }) {
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>
       <div className="dropdown-content">
         <a
           onClick={() => {
-            setQuery("?sort_by=created_at");
+            if (topic !== undefined) {
+              setQuery(`${topic}&&sort_by=created_at`);
+            } else {
+              setQuery("?sort_by=created_at");
+            }
           }}
         >
-          Date{" "}
+          Date
         </a>
         <a
           onClick={() => {
-            setQuery("?sort_by=comment_count");
+            if (topic !== undefined) {
+              setQuery(`${topic}&&sort_by=comment_count`);
+            } else {
+              setQuery("?sort_by=comment_count");
+            }
           }}
         >
           Comments
         </a>
         <a
           onClick={() => {
-            setQuery("?sort_by=votes");
+            if (topic !== undefined) {
+              setQuery(`${topic}&&sort_by=votes`);
+            } else {
+              setQuery("?sort_by=votes");
+            }
           }}
         >
           Votes
