@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SortBy from "../utils/SortBy";
 
 function Nav() {
   return (

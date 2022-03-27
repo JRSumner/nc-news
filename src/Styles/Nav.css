@@ -1,0 +1,14 @@
+.Nav {
+  text-align: center;
+  border: 1px solid red;
+}
+
+.nav-item {
+  font-family: "Quicksand", sans-serif;
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 10px;
+  font-size: larger;
+  font-weight: 800;
+  color: #7fffd4;
+}
