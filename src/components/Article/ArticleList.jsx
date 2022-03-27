@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchArticles } from "../api/api";
+import { useSearchParams } from "react-router-dom";
 
 import SortBy from "../utils/SortBy";
 
