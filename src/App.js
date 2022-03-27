@@ -1,4 +1,6 @@
-import "./App.css";
+import "./Styles/App.css";
+import "./Styles/Nav.css";
+import "./Styles/ArticleCard.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ArticlesByTopic from "./components/Article/ArticlesByTopic";
@@ -10,16 +12,18 @@ import ArticleList from "./components/Article/ArticleList";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<ArticleList />} />
-        <Route path="/topic/:topic" element={<ArticlesByTopic />} />
-        <Route path="/articles/:article_id" element={<ArticleById />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className="app-global">
+      <BrowserRouter>
+        <Header />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<ArticleList />} />
+          <Route path="/topic/:topic" element={<ArticlesByTopic />} />
+          <Route path="/articles/:article_id" element={<ArticleById />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

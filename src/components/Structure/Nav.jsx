@@ -4,7 +4,6 @@ import SortBy from "../utils/SortBy";
 function Nav() {
   return (
     <section>
-      {/* <SortBy /> */}
       <ul className="nav-bar">
         <li className="nav-item">
           <Link to="/"> Home </Link>
