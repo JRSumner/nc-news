@@ -1,7 +1,7 @@
 function SortBy({ setQuery, topic, query }) {
   return (
     <div className="dropdown">
-      <button className="dropbtn">Dropdown</button>
+      <button className="dropbtn">Filter By</button>
       <div className="dropdown-content">
         <a
           onClick={() => {
