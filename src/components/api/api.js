@@ -63,3 +63,13 @@ export const postComment = (comment, article_id) => {
       return res;
     });
 };
+
+export const deleteComment = (comment_id) => {
+  return axios
+    .delete(
+      `https://nc-news-example-seminar-3-18.herokuapp.com/api/comments/${comment_id}`
+    )
+    .then((res) => {
+      return res;
+    });
+};

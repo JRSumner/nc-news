@@ -3,7 +3,7 @@
 }
 
 .app-global {
-  background-color: #bdcebe;
+  background-color: #d6d6d6;
 }
 
 .Header,
@@ -70,7 +70,8 @@
 .dropbtn {
   background-color: #04aa6d;
   color: white;
-  padding: 16px;
+  padding: 8px;
+  margin-left: 15%;
   font-size: 16px;
   border: none;
 }

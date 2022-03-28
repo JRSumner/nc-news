@@ -3,8 +3,8 @@ import SortBy from "../utils/SortBy";
 
 function Nav() {
   return (
-    <section>
-      <ul className="nav-bar">
+    <section className="nav-bar">
+      <ul className="nav-list">
         <li className="nav-item">
           <Link to="/"> Home </Link>
         </li>

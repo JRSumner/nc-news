@@ -5,6 +5,7 @@ import Comments from "../Comments/ArticleComments";
 import { fetchComments } from "../api/api";
 import { fetchArticle } from "../api/api";
 import Voter from "../utils/Voter";
+import DeleteComment from "../utils/DeleteComment";
 
 function ArticleById() {
   const [article, setArticle] = useState([]);
@@ -56,6 +57,9 @@ function ArticleById() {
 
       <section className="comment-box">
         <AddComment setComments={setComments} article_id={article_id} />
+      </section>
+      <section>
+        <DeleteComment setComments={setComments} article_id={article_id} />
       </section>
 
       <Comments comments={comments} />

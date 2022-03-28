@@ -3,12 +3,30 @@
   border: 1px solid red;
 }
 
+.nav-bar {
+  background-color: #ffffff;
+  margin: auto;
+  width: 97%;
+  border-radius: 25px;
+  outline: solid rgb(60, 202, 160);
+  padding: 10px;
+  margin-bottom: 7px;
+}
+
+.nav-list {
+  font-size: 13px;
+  list-style: none;
+
+  padding-left: 0;
+}
+
 .nav-item {
+  line-height: 100%;
+  font-size: x-large;
   font-family: "Quicksand", sans-serif;
   display: inline-block;
-  margin-left: 6px;
-  margin-right: 10px;
-  font-size: larger;
+  padding: 1%;
+  position: relative;
   font-weight: 800;
   color: #7fffd4;
 }
