@@ -1,0 +1,33 @@
+.article-titleAndDetails-section {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1%;
+}
+
+.article-title {
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.article-details {
+  margin-left: 4%;
+  margin-top: 1%;
+}
+
+.outer-article-body {
+  background-color: #ffffff;
+
+  width: 99%;
+  border-radius: 25px;
+}
+
+.article-body {
+  background-color: #ffffff;
+  word-spacing: 5px;
+  padding: 1%;
+  outline: solid rgb(60, 202, 160);
+  margin: auto;
+  width: 100%;
+  font-size: ;
+  border-radius: 25px;
+}

@@ -34,6 +34,7 @@ function ArticlesByTopic() {
                 <dt>Author: {article.author}</dt>
                 <dt>{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}</dt>
                 <dt>Comments: {article.comment_count}</dt>
+                <dt>Votes: {article.votes}</dt>
               </dl>
             </section>
           );

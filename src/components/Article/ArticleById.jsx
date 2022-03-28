@@ -33,13 +33,22 @@ function ArticleById() {
 
   return (
     <section>
-      <h2>{article.title}</h2>
-      <p className="article-written-by">Written by: {article.author}</p>
-      <p className="article-posted-by">
-        Posted:{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}
-      </p>
-      <section className="article-body">
-        <p>{article.body}</p>
+      <section className="article-titleAndDetails-section">
+        <section className="article-title">
+          <h2>{article.title}</h2>
+        </section>
+        <section className="article-details">
+          <p className="article-written-by">Written by: {article.author}</p>
+          <p className="article-posted-by">
+            Posted:{" "}
+            {`${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`}
+          </p>
+        </section>
+      </section>
+      <section className="outer-article-body">
+        <section className="article-body">
+          <p>{article.body}</p>
+        </section>
       </section>
 
       <div className="article-comments-votes-section">

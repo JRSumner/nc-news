@@ -33,7 +33,7 @@ function ArticleList() {
               </Link>
               <dl>
                 <dt className="article-detail">Author: {article.author}</dt>
-                <dt className="article-detail">{`${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`}</dt>
+                <dt className="article-detail">{`${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`}</dt>
                 <dt className="article-detail">
                   Comments: {article.comment_count}
                 </dt>
