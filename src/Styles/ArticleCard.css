@@ -34,11 +34,11 @@
 }
 
 .up-vote {
-  margin-right: 10px;
+  margin-right: 2px;
 }
 
 .down-vote {
-  margin-left: 10px;
+  margin-left: 2px;
 }
 
 .voter-component {

@@ -8,9 +8,7 @@ export const fetchArticles = (query) => {
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles${queryStr}`
     )
     .then(({ data: { articles } }) => {
-      const fiveArticles = articles.slice(0, 5);
-
-      return fiveArticles;
+      return articles;
     });
 };
 
@@ -32,8 +30,7 @@ export const fetchByTopics = (topic, query) => {
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles?topic=${topicStr}${queryStr}`
     )
     .then(({ data: { articles } }) => {
-      const fiveArticles = articles.slice(0, 5);
-      return fiveArticles;
+      return articles;
     });
 };
 
