@@ -6,7 +6,7 @@ function SortBy({ setQuery, topic, query }) {
         <a
           onClick={() => {
             if (topic !== undefined) {
-              setQuery(`${topic}&&sort_by=created_at`);
+              setQuery(`&&sort_by=created_at`);
             } else {
               setQuery("?sort_by=created_at");
             }
@@ -17,7 +17,7 @@ function SortBy({ setQuery, topic, query }) {
         <a
           onClick={() => {
             if (topic !== undefined) {
-              setQuery(`${topic}&&sort_by=comment_count`);
+              setQuery(`&&sort_by=comment_count`);
             } else {
               setQuery("?sort_by=comment_count");
             }
@@ -28,7 +28,7 @@ function SortBy({ setQuery, topic, query }) {
         <a
           onClick={() => {
             if (topic !== undefined) {
-              setQuery(`${topic}&&sort_by=votes`);
+              setQuery(`&&sort_by=votes`);
             } else {
               setQuery("?sort_by=votes");
             }
