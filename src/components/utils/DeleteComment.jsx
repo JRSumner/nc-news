@@ -17,16 +17,17 @@ function DeleteComment({ setComments, article_id }) {
 
   return (
     <>
-      <label>Delete recent comment:</label>
-      <button
-        type="submit"
-        // onClick={() => {
-        //   deleteComment();
-        // }}
-      >
-        Delete
-      </button>
-      {isError ? <h4>{isError}</h4> : null}
+      <section className="delete-comment-component">
+        <button
+          type="submit"
+          // onClick={() => {
+          //   deleteComment();
+          // }}
+        >
+          Delete Comment
+        </button>
+        {isError ? <h4>{isError}</h4> : null}
+      </section>
     </>
   );
 }

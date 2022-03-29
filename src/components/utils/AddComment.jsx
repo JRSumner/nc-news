@@ -28,14 +28,16 @@ function AddComment({ setComments, article_id }) {
   };
 
   return (
-    <form className="add-comment" onSubmit={handleSubmit}>
-      <label>
-        Leave a comment:
-        <input type="text" value={comment} onChange={handleChange} />
-      </label>
-      <button type="submit">Submit</button>
-      {isError ? <h4>{isError}</h4> : null}
-    </form>
+    <section className="comment-component">
+      <form className="add-comment" onSubmit={handleSubmit}>
+        <label>
+          Comment:
+          <input type="text" value={comment} onChange={handleChange} />
+        </label>
+        <button type="submit">Submit</button>
+        {isError ? <h4>{isError}</h4> : null}
+      </form>
+    </section>
   );
 }
 

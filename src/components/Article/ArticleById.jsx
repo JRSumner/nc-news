@@ -50,27 +50,27 @@ function ArticleById() {
           <p>{article.body}</p>
         </section>
       </section>
-
-      <div className="article-comments-votes-section">
-        <div className="voter">
-          <Voter id={article.article_id} apiVotes={votes} />
-          {isError ? <h4>{isError}</h4> : null}
+      <section className="article-between-body-comments">
+        <div className="article-comments-votes-section">
+          <div className="voter">
+            <Voter id={article.article_id} apiVotes={votes} />
+            {isError ? <h4>{isError}</h4> : null}
+          </div>
         </div>
-      </div>
 
-      <section>
-        <p className="article-comment-and-vote-count">
-          Votes: {votes} Comments: {article.comment_count}
-        </p>
-      </section>
+        <section>
+          <p className="article-comment-and-vote-count">
+            Votes: {votes} Comments: {article.comment_count}
+          </p>
+        </section>
 
-      <section className="comment-box">
-        <AddComment setComments={setComments} article_id={article_id} />
+        <section className="comment-box">
+          <AddComment setComments={setComments} article_id={article_id} />
+        </section>
+        <section>
+          <DeleteComment setComments={setComments} article_id={article_id} />
+        </section>
       </section>
-      <section>
-        <DeleteComment setComments={setComments} article_id={article_id} />
-      </section>
-
       <Comments comments={comments} />
     </section>
   );

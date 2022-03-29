@@ -27,7 +27,6 @@ export const fetchArticle = (article_id) => {
 export const fetchByTopics = (topic, query) => {
   const queryStr = query === undefined ? "" : query;
   const topicStr = topic === undefined ? "" : topic;
-  console.log(query);
   return axios
     .get(
       `https://nc-news-example-seminar-3-18.herokuapp.com/api/articles?topic=${topicStr}${queryStr}`

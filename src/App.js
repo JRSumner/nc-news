@@ -2,6 +2,7 @@ import "./Styles/App.css";
 import "./Styles/Nav.css";
 import "./Styles/ArticleCard.css";
 import "./Styles/Article.css";
+import "./Styles/SortBy.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ArticlesByTopic from "./components/Article/ArticlesByTopic";

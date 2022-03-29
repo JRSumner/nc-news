@@ -12,8 +12,9 @@ export default function Voter({ id, apiVotes }) {
   };
 
   return (
-    <div className="voter">
+    <section className="voter-component">
       <button
+        className="up-vote"
         disabled={voterVotes === 1}
         onClick={() => {
           handleVote(1);
@@ -25,6 +26,7 @@ export default function Voter({ id, apiVotes }) {
       {apiVotes + voterVotes}
 
       <button
+        className="down-vote"
         disabled={voterVotes === -1}
         onClick={() => {
           handleVote(-1);
@@ -32,6 +34,6 @@ export default function Voter({ id, apiVotes }) {
       >
         👎
       </button>
-    </div>
+    </section>
   );
 }
